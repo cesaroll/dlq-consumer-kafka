@@ -1,7 +1,9 @@
 from kafka import KafkaConsumer
 from pymongo import MongoClient
 import json
+import config
 
+# host.docker.internal
 consumer = KafkaConsumer(
     'dlq-topic',
      bootstrap_servers=['localhost:9092'],
@@ -9,7 +11,7 @@ consumer = KafkaConsumer(
      enable_auto_commit=True,
      group_id='dlq-consumer-group')
 
-client = MongoClient('mongodb+srv://test:aAaNuMGzuck1y2YX@cluster0.o6w2h.gcp.mongodb.net/dlq?retryWrites=true&w=majority')
+client = MongoClient(config.mongoDbConnection)
 db = client.dlq
 collection = db.poisoned_messages
 

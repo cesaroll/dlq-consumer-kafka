@@ -1,0 +1,15 @@
+{
+    "namespace": "dql.avro",
+    "type": "record",
+    "name": "dlq",
+    "fields": [
+        {"name": "payload", "type": "string"},
+        {"name": "consume_time",  "type": "int"},
+        {"name": "produce_time",  "type": ["int", "null"]},
+        {"name": "topic", "type": ["string", "null"]},
+        {"name": "partition",  "type": ["int", "null"]},
+        {"name": "offset",  "type": ["int", "null"]},
+        {"name": "exception_message", "type": ["string", "null"]},
+        {"name": "exception_stacktrace", "type": ["string", "null"]}
+    ]
+}
