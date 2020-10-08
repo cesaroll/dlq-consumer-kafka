@@ -12,6 +12,7 @@ consumer = KafkaConsumer(
      group_id='dlq-consumer-group')
 
 client = MongoClient(config.mongoDbConnection)
+
 db = client.dlq
 collection = db.poisoned_messages
 
