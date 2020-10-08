@@ -9,7 +9,7 @@ consumer = KafkaConsumer(
      enable_auto_commit=True,
      group_id='dlq-consumer-group')
 
-client = MongoClient('mongodb+srv://test:aAaNuMGzuck1y2YX@cluster0.o6w2h.gcp.mongodb.net/dlq?retryWrites=true&w=majority')
+client = MongoClient('')
 db = client.dlq
 collection = db.poisoned_messages
 
